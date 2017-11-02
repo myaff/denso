@@ -1,0 +1,15 @@
+.address {
+  
+  margin: 0 0 1rem;
+  padding: 0;
+  line-height: 1.2;
+  
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-width: 25.5rem;
+    column-count: 2;
+    column-gap: 3rem;
+  }
+}

@@ -1,0 +1,78 @@
+.layout--desktop .pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  &__wrapper {
+    z-index: 2;
+  }
+  
+  &__link {
+    color: $color--link;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    transition: color 0.2s;
+    
+    &:hover {
+      color: rgba($color--link, 0.6);
+    }
+    
+    .icon {
+      @include absolute(top 0.5rem);
+      @include size(1.25rem);
+    }
+    
+    [class*="tp-heading--"] {
+      color: inherit;
+    }
+    [class*="tp-body--"] {
+      text-decoration: underline;
+      letter-spacing: normal;
+      margin-top: -0.5rem;
+    }
+    
+    &--prev {
+      padding-left: 1.5rem;
+      .icon {
+        left: 0;
+      }
+    }
+    &--next {
+      padding-right: 0.6rem;
+      text-align: right;
+      .icon {
+        right: -1rem;
+      }
+    }
+  }
+}
+.layout--mobile .pagination {
+  color: $color--link;
+  
+  &__text,
+  &__link,
+  [class*="tp-heading--"],
+  [class*="tp-body--"] {
+    color: inherit;
+  }
+  &__text {
+    font-weight: bold;
+  }
+  &__link {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    .tp-heading--big {
+      font-size: 28px;
+    }
+    
+    .icon {
+      font-size: $font-size--main;
+      display: block;
+      margin-right: 0.5rem;
+    }
+  }
+}

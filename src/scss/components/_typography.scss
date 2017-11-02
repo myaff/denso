@@ -1,0 +1,169 @@
+p {
+  margin: 2rem 0;
+  @include null-first-last-margin();
+}
+
+.tp-heading {
+  &--huge {
+    font-size: $font-size--huge;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    .layout--desktop & {
+      @media #{$home-height} {
+        font-size: $font-size--huge / 715px * 100vh;
+      }
+    }
+    .layout--mobile & {
+      font-size: 48px;
+      line-height: 60px;
+    }
+  }
+  &--large {
+    @include heading {
+      font-size: $font-size--large;
+      line-height: 1.5;
+    }
+  }
+  &--big {
+    @include heading {
+      font-size: $font-size--big;
+      font-weight: bold;
+      line-height: normal;
+    }
+  }
+  &--medium {
+    @include heading {
+      font-size: $font-size--medium;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      
+      @media #{$md-landing} {
+        font-size: 1.55vw;
+      }
+      
+      @media #{$xs} {
+        font-size: 5.31vw;
+      }
+    }
+  }
+}
+
+.tp-body {
+  &--large {
+    font-size: $font-size--large;
+    line-height: 1.2;
+    letter-spacing: 0.4em;
+  }
+  &--big {
+    font-size: $font-size--big;
+    font-weight: 600;
+    line-height: normal;
+    .layout--desktop & {
+      @media #{$home-height} {
+        font-size: $font-size--big / 715px * 100vh;
+      }
+    }
+  }
+  &--medium {
+    font-size: $font-size--main;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    line-height: 2;
+  }
+  &--base {
+    font-size: $font-size--base;
+  }
+  &--main {
+    font-size: $font-size--main;
+    line-height: 1.75;
+    .text-wrapper & {
+      max-width: 52rem;
+    }
+    b {
+      font-weight: 600;
+    }
+    .layout--desktop & {
+      @media #{$home-height} {
+        font-size: $font-size--main / 715px * 100vh;
+      }
+    }
+  }
+  &--wide {
+    font-size: $font-size--main;
+    line-height: 1.75;
+    letter-spacing: 0.05em;
+    .layout--desktop & {
+      @media #{$home-height} {
+        font-size: $font-size--main / 715px * 100vh;
+      }
+    }
+  }
+  &--small {
+    font-size: $font-size--small;
+    letter-spacing: 2px;
+  }
+}
+
+.fw-light {
+  font-weight: 300;
+}
+.fw-thin {
+  font-weight: 100;
+}
+
+.tp--uc {
+  text-transform: uppercase!important;
+}
+.tp--lc {
+  text-transform: lowercase!important;
+}
+
+.tp-text {
+  @each $align in (left, right, center) {
+    &--#{$align} {
+      text-align: $align;
+    }
+  }
+}
+
+.l-block {
+  @each $align in (left, right) {
+    &--#{$align} {
+      float: $align;
+    }
+  }
+  &--center {
+    margin: 0 auto;
+  }
+}
+
+.img-wrapper {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .layout--mobile & {
+    margin-left: -10px;
+    margin-right: -10px;
+    img {
+      @include size(100%, auto);
+    }
+  }
+}
+b, strong {
+  font-weight: 600;
+}
+.text-block {
+  max-width: 24.75rem;
+  
+  @media #{$md-landing} {
+    max-width: 33vw;
+  }
+  @media #{$xs} {
+    max-width: 100%;
+  }
+}

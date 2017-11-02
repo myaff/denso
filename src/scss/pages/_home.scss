@@ -1,0 +1,124 @@
+.page {
+  .layout--desktop &--home {
+    //margin: calc((100vh - 715px) / 2) 0;
+  }
+  .layout--mobile &--home {
+    background: url('../img/home/home-bg_m.png') top center no-repeat;
+    background-size: contain;
+  }
+  .layout--desktop &--home &__imgs-wrapper {
+    @include absolute(top 0 left 0);
+    @include size(100%);
+    z-index: 0;
+  }
+  .layout--desktop &--home &__img img {
+    display: block;
+    @include size(auto, 100%);
+  }
+  .layout--desktop &--home &__img--rect-blue {
+    @include absolute(top 0 right 50%);
+    @include size(1040px, 417px);
+    margin-right: -75px;
+    @media #{$home-height} {
+      @include size(145.45vh, 58.32vh);
+      margin-right: -10.49vh;
+    }
+  }
+  .layout--desktop &--home &__img--rect-red {
+    @include absolute(top 0 left 50%);
+    @include size(802px, 442px);
+    margin-left: 160px;
+    @media #{$home-height} {
+      @include size(112.17vh, 61.82vh);
+      margin-left: 22.38vh;
+    }
+  }
+  .layout--desktop &--home &__img--poly-blue {
+    @include absolute(top -410px right 50%);
+    @include size(1215px, 823px);
+    margin-right: -75px;
+    @media #{$home-height} {
+      top: -57.34vh;
+      @include size(169.93vh, 115.1vh);
+      margin-right: -10.49vh;
+    }
+  }
+  .layout--desktop &--home &__img--poly-red {
+    @include absolute(top -400px left 50%);
+    @include size(943px, 841px);
+    margin-left: 160px;
+    @media #{$home-height} {
+      top: -55.94vh;
+      @include size(131.89vh, 117.62vh);
+      margin-left: 22.38vh;
+    }
+  }
+  .layout--desktop &--home &__img--question-sm {
+    @include absolute(top 4px left 50%);
+    @include size(104px, 110px);
+    margin-left: 190px;
+    @media #{$home-height} {
+      @include size(14.55vh, 15.38vh);
+      margin-left: 26.57vh;
+    }
+  }
+  .layout--desktop &--home &__img--question-md {
+    @include absolute(top 440px right 50%);
+    @include size(156px, 172px);
+    margin-right: 240px;
+    @media #{$home-height} {
+      top: 61.54vh;
+      @include size(21.82vh, 24.06vh);
+      margin-right: 33.57vh;
+    }
+  }
+  .layout--desktop &--home &__img--question-big {
+    @include absolute(top 235px right 50%);
+    @include size(214px, 296px);
+    margin-right: 100px;
+    @media #{$home-height} {
+      top: 32.87vh;
+      @include size(29.93vh, 41.4vh);
+      margin-right: 13.99vh;
+    }
+  }
+  .layout--desktop &--home &__img--plug {
+    @include absolute(top -10px right 50%);
+    @include size(215px, 268px);
+    margin-right: 150px;
+    @media #{$home-height} {
+      @include size(30.07vh, 37.48vh);
+      margin-right: 20.98vh;
+    }
+  }
+  .layout--desktop &--home &__img--car {
+    @include absolute(top 20px left 50%);
+    @include size(440px, 285px);
+    margin-left: -210px;
+    @media #{$home-height} {
+      @include size(61.54vh, 39.86vh);
+      margin-left: -29.37vh;
+    }
+  }
+  .layout--desktop &--home &__heading {
+    margin-top: 310px;
+    @media #{$home-height} {
+      margin-top: 43.36vh;
+    }
+  }
+  .layout--desktop &--home &__text {
+    line-height: 1.75;
+    margin-top: 1.25rem;
+    
+    .btn {
+      margin-top: 40px;
+    }
+    @media #{$home-height} {
+      margin-top: 2.8vh;
+      
+      .btn {
+        margin-top: 4.2vh;
+      }
+    }
+  }
+}

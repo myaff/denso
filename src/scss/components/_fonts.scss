@@ -1,0 +1,18 @@
+$fonts-path: '../assets/fonts/';
+@mixin font_paths($font){
+	src: url($font+'.eot');
+	src: url($font+'.eot#iefix') format("embedded-opentype"),
+       url('#{$fonts-path}'+$font+'.woff') format("woff"),
+       url('#{$fonts-path}'+$font+'.ttf') format("truetype"),
+       url('#{$fonts-path}'+$font+'.otf') format("opentype"),
+       url('#{$fonts-path}'+$font+'.svg') format("svg");
+}
+
+@each $name, $file, $weight, $style in $inc-fonts {
+  @font-face {
+    font-family: unquote($name);
+    @include font_paths($file);
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

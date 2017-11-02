@@ -1,0 +1,107 @@
+$field-input-color: black;
+$field-input-bg: white;
+$field-text-color: #393a3e;
+
+$checkbox-size: 1.25rem;
+$checkbox-color: $field-input-color;
+$checkbox-bg: $field-input-bg;
+
+.field {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  
+  & + & {
+    margin-left: 1.25rem;
+  }
+  
+  &--fullwidth {
+    display: block;
+    width: 100%;
+    
+    & + .field {
+      margin-left: 0;
+    }
+  }
+  
+  &__label {
+    display: block;
+    position: relative;
+  }
+  
+  &__input {
+    display: block;
+    @include size(100%, 2.5rem);
+    padding: 0.75em;
+    box-sizing: border-box;
+    border: 0;
+    
+    color: $field-input-color;
+    background: $field-input-bg;
+    
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+  }
+  &__input,
+  &__placeholder {
+    font: #{$font-size--small} / $font-size--base $font--base;
+    vertical-align: middle;
+    text-align: center;
+    letter-spacing: 0.2em;
+  }
+  
+  &__placeholder {
+    @include absolute(top 1em left 0);
+    width: 100%;
+    cursor: text;
+    opacity: 1;
+    transition: opacity 0.2s;
+    
+    .has-focus &,
+    .has-value & {
+      opacity: 0;
+    }
+  }
+  
+  &__label-text {
+    font-size: $font-size--base;
+    color: $field-text-color;
+  }
+  
+  &__label--check {
+    padding-left: $checkbox-size + 0.5rem;
+  }
+  
+  &__check {
+    display: none;
+  }
+  
+  &__check ~ &__label-text {
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      @include size($checkbox-size);
+      @include absolute(top 0 left 0);
+      cursor: pointer;
+    }
+    
+    &::before {
+      background: $checkbox-bg;
+    }
+    
+    &::after {
+      //background: url('../img/tick.png') center no-repeat;
+      transition: opacity 0.2s;
+      opacity: 0;
+    }
+  }
+  
+  &__check:checked ~ &__label-text::after {
+    opacity: 1;
+  }
+  
+}

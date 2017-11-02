@@ -1,0 +1,652 @@
+.test {
+  @include absolute(top 0 left 0);
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s, z-index 0.1s 0.3s;
+  &.is-active {
+    z-index: 5;
+    opacity: 1;
+    transition: z-index 0.1s, opacity 0.3s 0.1s;
+  }
+  .layout--desktop &__content {
+    padding-top: 1px;
+  }
+  .layout--desktop &__num {
+    @include absolute(top 0 left 50%);
+    @include size(420px, 209px);
+    margin-left: -210px;
+    @media #{$home-height} {
+      @include size(58.74vh, 29.23vh);
+      margin-left: -29.37vh;
+    }
+    
+    img {
+      display: block;
+      @include size(auto, 100%);
+    }
+  }
+  .layout--mobile &__num {
+    img {
+      display: block;
+      @include size(100%, auto);
+    }
+  }
+  .layout--desktop &__text {
+    margin: 2.5rem auto 1.5rem;
+    @media #{$home-height} {
+      margin: 5.59vh auto 3.36vh;
+    }
+  }
+  .layout--mobile &__text {
+    @include absolute(top 0 left 0);
+    @include size(100%, 230px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    > div {
+      width: 100%;
+      margin: auto 0;
+    }
+  }
+  .layout--desktop &__controls {
+    margin-bottom: 1.25rem;
+    @media #{$home-height} {
+      margin-bottom: 2.8vh;
+    }
+  }
+  &__img {
+    transition: opacity 0.5s;
+    &.faden {
+      opacity: 0;
+    }
+  }
+  &__img img {
+    width: 100%;
+  }
+}
+
+.test-ctrl {
+  position: relative;
+  display: inline-block;
+  margin: 0 2rem;
+  padding-left: 2.5rem;
+  cursor: pointer;
+  
+  .layout--mobile & {
+    margin: 0 1rem;
+  }
+  
+  &__text {
+    line-height: 1;
+  }
+  &__text::before {
+    content: '';
+    display: block;
+    @include circle(1.5rem, 50%);
+    @include absolute(top 1px left 0);
+    border: 2px solid currentColor;
+  }
+  &__text::after {
+    content: '';
+    display: block;
+    @include circle(10px, 50%);
+    @include absolute(top 10px left 9px);
+    background: currentColor;
+    opacity: 0;
+  }
+  &__input:checked + &__text::after {
+    opacity: 1;
+  }
+}
+
+.layout--desktop .test__answer {
+  &.modal {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .modal__content {
+      margin-top: 1.5rem;
+      color: $color--alt;
+      .btn {
+        margin-top: 1.5rem;
+      }
+    }
+    @media #{$home-height} {
+      .modal__content {
+        margin-top: 4.2vh;
+        .btn {
+          margin-top: 4.2vh;
+        }
+      }
+    }
+  }
+}
+.layout--desktop .test {
+  &--1 .test__text {
+    max-width: 460px;
+  }
+  &--2 .test__text {
+    max-width: 620px;
+  }
+  &--3 .test__text {
+    max-width: 530px;
+  }
+  &--4 .test__text {
+    max-width: 500px;
+  }
+  &--5 .test__text {
+    max-width: 550px;
+  }
+  &--6 .test__text {
+    max-width: 770px;
+  }
+  &--7 .test__text {
+    max-width: 500px;
+  }
+  &--8 .test__text {
+    max-width: 660px;
+  }
+  &--1 .test__answer.modal {
+    @include size(980px, 530px);
+    padding: 100px 215px;
+    background-image: url('../img/test/1/answer-bg.png');
+    @media #{$home-height} {
+      @include size(137.06vh, 74.13vh);
+      padding: 14vh 30.07vh;
+    }
+  }
+  &--2 .test__answer.modal {
+    @include size(940px, 579px);
+    padding: 110px 215px 70px;
+    background-image: url('../img/test/2/answer-bg.png');
+    @media #{$home-height} {
+      @include size(131.47vh, 80.98vh);
+      padding: 14vh 30.07vh;
+    }
+  }
+  &--3 .test__answer.modal {
+    @include size(980px, 530px);
+    padding: 100px 240px;
+    background-image: url('../img/test/3/answer-bg.png');
+    .modal__content {
+      margin-top: 1.25rem;
+      .btn {
+        margin-top: 1.25rem;
+      }
+    }
+    @media #{$home-height} {
+      @include size(137.06vh, 74.13vh);
+      padding: 14vh 33.57vh;
+      .modal__content {
+        margin-top: 2.8vh;
+        .btn {
+          margin-top: 2.8vh;
+        }
+      }
+    }
+  }
+  &--4 .test__answer.modal {
+    @include size(1000px, 707px);
+    padding: 100px 220px;
+    background-image: url('../img/test/4/answer-bg.png');
+    .modal__content {
+      margin-top: 14px;
+      .btn {
+        margin-top: 14px;
+      }
+    }
+    @media #{$home-height} {
+      @include size(139.86vh, 98.88vh);
+      padding: 14vh 30.77vh;
+      .modal__content {
+        margin-top: 2vh;
+        .btn {
+          margin-top: 2vh;
+        }
+      }
+    }
+  }
+  &--5 .test__answer.modal {
+    @include size(940px, 600px);
+    padding: 110px 220px 80px;
+    background-image: url('../img/test/5/answer-bg.png');
+    .modal__content {
+      margin-top: 14px;
+      .btn {
+        margin-top: 14px;
+      }
+    }
+    @media #{$home-height} {
+      @include size(131.47vh, 83.92vh);
+      padding: 15.5vh 30.77vh 9vh;
+      .modal__content {
+        margin-top: 2vh;
+        .btn {
+          margin-top: 2vh;
+        }
+      }
+    }
+  }
+  &--6 .test__answer.modal {
+    @include size(1150px, 715px);
+    padding: 90px 260px;
+    background-image: url('../img/test/6/answer-bg.png');
+    .modal__content {
+      margin-top: 10px;
+      .btn {
+        margin-top: 10px;
+      }
+    }
+    @media #{$home-height} {
+      @include size(160.84vh, 100vh);
+      padding: 12.59vh 36.36vh;
+      .modal__content {
+        margin-top: 1.5vh;
+        .btn {
+          margin-top: 1.5vh;
+        }
+      }
+    }
+  }
+  &--7 .test__answer.modal {
+    @include size(1002px, 600px);
+    padding: 105px 250px;
+    background-image: url('../img/test/7/answer-bg.png');
+    .modal__content {
+      margin-top: 14px;
+      .btn {
+        margin-top: 14px;
+      }
+    }
+    @media #{$home-height} {
+      @include size(140.14vh, 83.92vh);
+      padding: 14.69vh 36vh;
+      .modal__content {
+        margin-top: 2vh;
+        .btn {
+          margin-top: 2vh;
+        }
+      }
+    }
+  }
+  &--8 .test__answer.modal {
+    @include size(940px, 580px);
+    padding: 130px 220px 85px;
+    background-image: url('../img/test/8/answer-bg.png');
+    @media #{$home-height} {
+      @include size(131.47vh, 81.12vh);
+      padding: 18vh 30.77vh 12vh;
+    }
+  }
+}
+
+.layout--mobile .test {
+  .modal {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    transform: none;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    text-align: left;
+    color: $color--alt;
+    &__footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &--1 .modal,
+  &--3 .modal,
+  &--4 .modal,
+  &--7 .modal {
+    background: #368ae2;
+  }
+  &--2 .modal,
+  &--5 .modal,
+  &--6 .modal,
+  &--8 .modal {
+    background: #e61211;
+  }
+}
+
+.test__animation {
+  //@include size(1680px, 930px);
+  @include size(100vh, 55vh);
+  img {
+    display: block;
+    @include size(100%, auto);
+  }
+  .bg {
+    width: 100%;
+    @include absolute(top 0 left 0);
+    transform-origin: center;
+    transform: scale(0);
+  }
+  .car {
+    transform-origin: right bottom;
+    transform: scale(0);
+  }
+  
+  .test--1 & {
+    .smoke-back {
+      @include absolute(top 112/930*100% left 770/1680*100%);
+      width: 258/1680*100%;
+      transform-origin: bottom center;
+      transform: scale(0);
+    }
+    .smoke-front {
+      @include absolute(top 90/930*100% left 730/1680*100%);
+      width: 258/1680*100%;
+      transform-origin: bottom center;
+      transform: scale(0);
+    }
+    .car {
+      width: 750/1680*100%;
+      @include absolute(left 160/1680*100% bottom 113/930*100%);
+    }
+    .gaz-station {
+      width: 647/1680*100%;
+      @include absolute(left 810/1680*100% bottom 113/930*100%);
+      opacity: 0;
+    }
+  }
+  .test--2 & {
+    perspective: 500px;
+    .water-back,
+    .water-front {
+      @include absolute(top 0 left 0);
+      @include size(100%);
+      clip-path: polygon(256/1680*100% 0%, 1486/1680*100% 0%, 1475/1680*100% 393/930*100%, 1652/1680*100% 481/930*100%, 1120/1680*100% 891/930*100%, 336/1680*100% 906/930*100%, 36/1680*100% 544/930*100%, 280/1680*100% 390/930*100%);
+      img {
+        @include absolute(top 385/930*100% left 0);
+        width: 1680/1680*100%;
+        transform-origin: bottom left;
+        transform: translate(100px, 500px);
+      }
+      .no-clip-path & {
+        @include absolute(bottom 2.8% left 2.2%);
+        @include size(96%, 97.2%);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform-origin: center;
+        transform: scale(0);
+        img {
+          display: none;
+        }
+      }
+    }
+    .no-clip-path & .water-back {
+      background-image: url('../img/test/2/water-back-ncp.png');
+    }
+    .no-clip-path & .water-front {
+      background-image: url('../img/test/2/water-front-ncp.png');
+    }
+    .bubbles {
+      @include absolute(left 315/1680*100% top 450/930*100%);
+      width: 529/1680*100%;
+      transform-origin: bottom center;
+      transform: translate(50px, 200px) scale(0);
+    }
+    .car {
+      width: 545/1680*100%;
+      @include absolute(left 445/1680*100% top 170/930*100%);
+      transform-origin: center;
+    }
+    .tube {
+      width: 98/1680*100%;
+      @include absolute(left 930/1680*100% top 75/930*100%);
+      transform-origin: bottom left;
+      transform: scale(0);
+    }
+    .flipper-left {
+      width: 217/1680*100%;
+      @include absolute(left 360/1680*100% top 565/930*100%);
+      transform-origin: top right;
+      transform: scale(0);
+    }
+    .flipper-right {
+      width: 238/1680*100%;
+      @include absolute(left 860/1680*100% top 545/930*100%);
+      transform-origin: top left;
+      transform: scale(0);
+    }
+    .smoke {
+      width: 209/1680*100%;
+      @include absolute(left 547/1680*100% top 80/930*100%);
+      transform-origin: bottom center;
+      transform: scale(0);
+    }
+    .sparks {
+      width: 384/1680*100%;
+      @include absolute(left 523/1680*100% top 240/930*100%);
+      transform-origin: center;
+      opacity: 0;
+    }
+  }
+  .test--3 & {
+    perspective: 500px;
+    .car {
+      width: 750/1680*100%;
+      @include absolute(left 165/1680*100% bottom 65/930*100%);
+    }
+    .bubble-big {
+      @include absolute(top 100/930*100% right 78/1680*100%);
+      width: 664/1680*100%;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    .bubble-medium {
+      @include absolute(top 438/930*100% left 900/1680*100%);
+      width: 151/1680*100%;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    .bubble-small {
+      @include absolute(top 550/930*100% left 860/1680*100%);
+      width: 71/1680*100%;
+      transform-origin: center;
+      transform: scale(0);
+    }
+    .plug {
+      width: 307/1680*100%;
+      @include absolute(right 287/1680*100% top 57/930*100%);
+      transform-origin: center;
+      transform: rotate(270deg) scale(0);
+    }
+    .spark {
+      width: 467/1680*100%;
+      @include absolute(right 275/1680*100% bottom 70/930*100%);
+      transform-origin: center;
+      transform: scale(0) rotate(315deg);
+    }
+  }
+  .test--4 & {
+    .car {
+      width: 820/1680*100%;
+      @include absolute(left 160/1680*100% bottom 105/930*100%);
+      //transform-origin: center;
+    }
+    .tank {
+      @include absolute(bottom 105/930*100% right 290/1680*100%);
+      width: 588/1670*100%;
+      transform-origin: left bottom;
+      transform: scale(0);
+    }
+    .barrels {
+      @include absolute(top 117/930*100% left 160/1680*100%);
+      width: 820/1680*100%;
+      opacity: 0;
+    }
+    .pipe {
+      @include absolute(top 110/930*100% left 860/1680*100%);
+      width: 120/1680*100%;
+      opacity: 0;
+    }
+    .puddle {
+      width: 1253/1680*100%;
+      @include absolute(left 135/1680*100% bottom 100/930*100%);
+      transform-origin: top center;
+      transform: scale(0);
+    }
+    .drops {
+      width: 808/1680*100%;
+      @include absolute(left 130/1680*100% bottom 160/930*100%);
+      transform-origin: center;
+      transform: scale(0.7);
+      opacity: 0;
+    }
+  }
+  .test--5 & {
+    .car,
+    .color-back,
+    .color-front {
+      width: 951/1680*100%;
+      @include absolute(left 70/1680*100% bottom 80/930*100%);
+      transform-origin: center;
+    }
+    .color-back,
+    .color-front {
+      opacity: 0;
+    }
+    .tube {
+      @include absolute(top 50/930*100% right 116/1680*100%);
+      width: 1394/1680*100%;
+      opacity: 0;
+    }
+    .temp {
+      @include absolute(top 50/930*100% right 116/1680*100%);
+      width: 611/1680*100%;
+      transform-origin: bottom center;
+      transform: scale(0);
+    }
+    .arrow {
+      width: 27/1680*100%;
+      @include absolute(right 406/1680*100% bottom 440/930*100%);
+      transform-origin: bottom center;
+      transform: scale(0) rotate(-66deg);
+    }
+    .smoke-top {
+      width: 135/1680*100%;
+      @include absolute(left 440/1680*100% top 84/930*100%);
+      transform-origin: bottom center;
+      transform: scale(0);
+    }
+    .smoke-left {
+      width: 162/1680*100%;
+      @include absolute(left 145/1680*100% top 305/930*100%);
+      transform-origin: right center;
+      transform: scale(0);
+    }
+  }
+  .test--6 & {
+    .car {
+      width: 750/1680*100%;
+      @include absolute(left 160/1680*100% bottom 40/930*100%);
+    }
+    .bang {
+      width: 889/1680*100%;
+      @include absolute(left 130/1680*100% bottom 265/930*100%);
+      transform-origin: bottom center;
+      transform: scale(0);
+    }
+    .funnel {
+      width: 1308/1680*100%;
+      @include absolute(top 110/930*100% right 210/1680*100%);
+      opacity: 0;
+    }
+    .flask-green-full,
+    .flask-green-empty {
+      width: 308/1680*100%;
+      @include absolute(top 40/930*100% right 410/1680*100%);
+      transform-origin: center;
+      opacity: 0;
+    }
+    .flask-blue-full,
+    .flask-blue-empty {
+      width: 308/1680*100%;
+      @include absolute(top 40/930*100% right 130/1680*100%);
+      transform-origin: center;
+      opacity: 0;
+    }
+  }
+  .test--7 & {
+    .car,
+    .ice {
+      width: 760/1680*100%;
+      @include absolute(left 330/1680*100% top 270/930*100%);
+      transform-origin: center;
+    }
+    .ice {
+      opacity: 0;
+    }
+    .smoke {
+      width: 273/1680*100%;
+      @include absolute(bottom 270/930*100% left 1030/1680*100%);
+      transform-origin: left bottom;
+      transform: scale(0);
+    }
+  }
+  .test--8 & {
+    .car {
+      width: 750/1680*100%;
+      @include absolute(left 10/1680*100% top 285/930*100%);
+    }
+    .gaz-station {
+      width: 682/1680*100%;
+      @include absolute(top 55/930*100% left 755/1680*100%);
+      opacity: 0;
+    }
+    .hosepipe {
+      width: 414/1680*100%;
+      @include absolute(top 55/930*100% left 707/1680*100%);
+      opacity: 0;
+    }
+    .smoke-left {
+      width: 273/1680*100%;
+      @include absolute(top 210/930*100% left -35/1680*100%);
+      transform-origin: bottom right;
+      transform: scale(0);
+    }
+    .smoke-right {
+      width: 273/1680*100%;
+      @include absolute(top 245/930*100% left 640/1680*100%);
+      transform-origin: bottom left;
+      transform: scale(0);
+    }
+  }
+}
+
+.result {
+  color: $color--alt;
+  &__note {
+    color: $color--primary;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  &__title {
+    font-size: 42px;
+  }
+  &__text {
+    max-width: 500px;
+    margin: 20px auto 40px;
+  }
+  &--high,
+  &--medium,
+  &--low {
+    display: none;
+  }
+  .modal--result.high &--high {
+    display: block;
+  }
+  .modal--result.medium &--medium {
+    display: block;
+  }
+  .modal--result.low &--low {
+    display: block;
+  }
+}

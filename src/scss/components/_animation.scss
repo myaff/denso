@@ -1,0 +1,67 @@
+@media #{$min-animation} {
+  .a {
+    &-fade {
+      .is-animating & {
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      
+      .is-animating .animate > & {
+        opacity: 1;
+      }
+    }
+    
+    &-fade-slide {
+      .is-animating & {
+        opacity: 0;
+        transform: translateY(2rem);
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      
+      .is-animating .animate > & {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    &-fade-slide-left {
+      .is-animating & {
+        opacity: 0;
+        transform: translateX(2rem);
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      
+      .is-animating .animate > & {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    &-fade-slide-right {
+      .is-animating & {
+        opacity: 0;
+        transform: translateX(-2rem);
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      
+      .is-animating .animate > & {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    &-ordered {
+      @for $i from 0 through 5 {
+        &:nth-child(#{$i}) {
+          transition-delay: 0.3s * $i;
+        }
+      }
+    }
+    
+    &-delay {
+      @for $i from 0 through 5 {
+        .is-animating &-#{$i} {
+          transition-delay: 0.3s * $i;
+        }
+      }
+    }
+  }
+}

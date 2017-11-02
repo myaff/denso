@@ -1,0 +1,23 @@
+@import 'mixins';
+@import 'variables';
+
+@import 'components/fonts';
+@import 'components/grid/gridlex';
+@import 'components/spacing';
+@import 'components/display';
+
+@import 'components/base';
+@import 'components/typography';
+@import 'components/svg-norm';
+@import 'components/logo';
+@import 'components/social-btns';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/button';
+@import 'components/modal';
+@import 'components/test';
+
+@import 'pages/home';
+@import 'pages/test';
+
+@import 'components/animation';

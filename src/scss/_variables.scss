@@ -1,0 +1,119 @@
+// fonts to include
+$inc-fonts: (
+  ("HelveticaNeueCyr", HelveticaNeueCyr-Thin, 100, normal),
+  ("HelveticaNeueCyr", HelveticaNeueCyr-Light, 300, normal),
+  ("HelveticaNeueCyr", HelveticaNeueCyr-Roman, normal, normal),
+  ("HelveticaNeueCyr", HelveticaNeueCyr-Medium, 600, normal)
+);
+
+$font--base: 'HelveticaNeueCyr', Roboto, Arial, sans-serif;
+$font--accent: $font--base;
+$font-size--small: 14px;
+$font-size--base: 16px;
+$font-size--medium: 24px;
+$font-size--big: 30px;
+$font-size--large: 34px;
+$font-size--huge: 60px;
+$font-size--main: 18px;
+$line-height--base: 1.5;
+$color--base: #000000;
+$color--alt: #ffffff;
+$color--heading: #000000;
+$color--primary: #e31938;
+$color--secondary: #7da7d9;
+$color--link: $color--primary;
+$color--success: #00ff24;
+$color--error: #ff0000;
+
+$body-bg: #eeeeee;
+$body-bg--mobile: #f9f9f9;
+$header-bg: transparent;
+$header-color: #6d6664;
+$btn-bg: #eaeaea;
+$header-height: 50px;
+$scroll-width: 17px;
+
+$media-lg: 'screen and (min-width: 77rem)';
+
+$z-index--dropdown: 10;
+$z-index--modal: 100;
+$z-index--header: 200;
+
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer:   1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$spacers: (
+  0: (
+    x: ($spacer-x * 0),
+    y: ($spacer-y * 0)
+  ),
+  1: (
+    x: ($spacer-x * .25),
+    y: ($spacer-y * .25)
+  ),
+  2: (
+    x: ($spacer-x * .5),
+    y: ($spacer-y * .5)
+  ),
+  3: (
+    x: $spacer-x,
+    y: $spacer-y
+  ),
+  4: (
+    x: ($spacer-x * 1.5),
+    y: ($spacer-y * 1.5)
+  ),
+  5: (
+    x: ($spacer-x * 2),
+    y: ($spacer-y * 2)
+  ),
+  6: (
+    x: ($spacer-x * 2.5),
+    y: ($spacer-y * 2.5)
+  ),
+  7: (
+    x: ($spacer-x * 3),
+    y: ($spacer-y * 3)
+  ),
+  8: (
+    x: ($spacer-x * 4),
+    y: ($spacer-y * 4)
+  )
+) !default;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$breakpoints: false;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 40.06rem,
+  md: 48rem,
+  lg: 64rem,
+  xl: 80rem,
+  xxl: 90rem
+) !default;
+
+$sm-height: 'screen and (max-height: 799px)';
+$home-height: 'screen and (min-height: 640px) and (max-height: 715px)';
+$xs-height: 'screen and (max-height: 639px)';
+$min-animation: 'screen and (min-width: 64rem)';
+$md-landing: 'screen and (max-width: 68.75rem)';
+$xxs:        "screen and (max-width: 30rem)" !default; // up to 480px
+$xs:        "screen and (max-width: 40rem)" !default; // up to 640px
+$sm:        "screen and (max-width: 52rem)" !default; // max 832px
+$md:        "screen and (max-width: 64rem)" !default; // max 1024px
+$lg:        "screen and (max-width: 80rem)" !default; // max 1280px
+$xl:        "screen and (min-width: 80rem)" !default; // min 1280px
+$xxl:        "screen and (min-width: 90rem)" !default; // min 1440px
+$md-up:     "screen and (min-width: 64.06rem)" !default; // min 1024px

@@ -1,0 +1,30 @@
+.order-form {
+  
+  max-width: 41%;
+  margin-top: 2.5rem;
+  
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  &__text {
+    max-width: 53%;
+    
+    &.tp-body--large {
+      padding-top: 0;
+      line-height: 1.1;
+      letter-spacing: 0.18em;
+    }
+  }
+  
+  &__message {
+    margin-left: 17rem;
+  }
+  
+  &__message &__text {
+    max-width: 100%;
+  }
+  
+}

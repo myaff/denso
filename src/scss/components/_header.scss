@@ -1,0 +1,39 @@
+.header {
+  z-index: $z-index--header;
+  @include size(100%, $header-height);
+  background: $header-bg;
+  color: $header-color;
+  
+  .layout--desktop & {
+    @include fixed(top 50px left 0);
+  }
+  
+  .layout--mobile &,
+  &.modal__header {
+    @include absolute(top 30px left 0);
+    height: 30px;
+  }
+  
+  .layout--desktop ~ .modal__wrapper &.modal__header {
+    display: none;
+  }
+  
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .layout--desktop &__logo {
+    max-height: $header-height;
+    img {
+      max-height: $header-height;
+    }
+  }
+  .layout--mobile &__logo,
+  .modal__header &__logo {
+    max-height: 30px;
+    img {
+      max-height: 30px;
+    }
+  }
+}

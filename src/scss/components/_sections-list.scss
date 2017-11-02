@@ -1,0 +1,285 @@
+.sections-list {
+  
+  @include absolute(top 0 left 0);
+  @include size(100%);
+  
+  &__item {
+    &--architekt {
+      @include absolute(top 10.5rem left 3.5rem);
+    }
+    &--art {
+    //  @include absolute(top 8.5rem right 2.5rem);
+      @include absolute(top 5.5rem right -0.5rem);
+    }
+    &--philosophy {
+      @include absolute(top 42.5rem left 23rem);
+    }
+    &--fashion {
+    //  @include absolute(top 52rem left 6.5rem);
+      @include absolute(top 56rem left 3.5rem);
+    }
+    &--music {
+      @include absolute(top 53.5rem right 8.2rem);
+    }
+  
+    @each $item in (architekt, art, philosophy, music, fashion) {
+      &--#{$item} {
+        animation: $item 6s infinite linear;
+      }
+    }
+    
+  }
+}
+
+
+@keyframes architekt {
+  0% {
+    top: 10.5rem;
+    left: 3.5rem;
+  }
+  18%{
+    transform: scale(1,1);
+  }
+  20%{
+    top: 4.6rem;
+    left: 6.5rem;
+    transform: scale(1.05,0.95);
+  }
+  22%{
+    transform: scale(1,1);
+  }
+  38%{
+    transform: scale(1,1);
+  }
+  40%{
+    top: 7.5rem;
+    left: 14.5rem;
+    transform: scale(0.95,1.05);
+  }
+  42%{
+    transform: scale(1,1);
+  }
+  73%{
+    transform: scale(1,1);
+  }
+  75%{
+    top: 23rem;
+    left: 2.7rem;
+    transform: scale(1.05,0.95);
+  }
+  77%{
+    transform: scale(1,1);
+  }
+  85.5%{
+    transform: scale(1,1);
+  }
+  87%{
+    top: 16rem;
+    left: 2rem;
+    transform: scale(0.95,1.05);
+  }
+  88.5%{
+    transform: scale(1,1);
+  }
+  100% {
+    top: 10.5rem;
+    left: 3.5rem;
+  }
+
+}
+
+@keyframes art {
+  0% {
+    top: 5.5rem;
+    right: -0.5rem;
+  }
+  10%{
+    transform: scale(1,1);
+  }
+  12%{
+    top: 3.7rem;
+    right: 2rem;
+    transform: scale(1.05,0.95);
+  }
+  14%{
+    transform: scale(1,1);
+  }
+  38%{
+    transform: scale(1,1);
+  }
+  40%{
+    top: 5rem;
+    right: 11.2rem;
+    transform: scale(0.95,1.05);
+  }
+  42%{
+    transform: scale(1,1);
+  }
+  68%{
+    transform: scale(1,1);
+  }
+  70%{
+    top: 11.5rem;
+    right: 4rem;
+    transform: scale(1.05,0.95);
+  }
+  72%{
+    transform: scale(1,1);
+  }
+  91%{
+    transform: scale(1,1);
+  }
+  93%{
+    top: 6rem;
+    right: -2.5rem;
+    transform: scale(0.95,1.05);
+  }
+  95%{
+    transform: scale(1,1);
+  }
+  100%{
+    top: 5.5rem;
+    right: -0.5rem;
+  }
+}
+
+@keyframes philosophy {
+  0% {
+    top: 42.5rem;
+    left: 23rem;
+  }
+  20%{
+    transform: scale(1,1);
+  }
+  22%{
+    transform: scale(0.95,1.05);
+  }
+  24%{
+    transform: scale(1,1);
+  }
+  38%{
+    transform: scale(1,1);
+  }
+  40%{
+    top: 60rem;
+    left: 23rem;
+    transform: scale(1.05,0.95);
+  }
+  42%{
+    transform: scale(1,1);
+  }
+  88%{
+    transform: scale(1,1);
+  }
+  90%{
+    top: 40.3rem;
+    left: 23rem;
+    transform: scale(1.05,0.95);
+  }
+  92%{
+    transform: scale(1,1);
+  }
+  100%{
+    top: 42.5rem;
+    left: 23rem;
+  }
+}
+
+@keyframes music {
+  0% {
+    top: 53.5rem;
+    right: 8.2rem;
+  }
+  21%{
+    transform: scale(1,1);
+  }
+  22.5%{
+    top: 61rem;
+    right: 11rem;
+    transform: scale(1.05,0.95);
+  }
+  24%{
+    transform: scale(1,1);
+  }
+  66%{
+    transform: scale(1,1);
+  }
+  67.5%{
+    top: 48rem;
+    right: 4.5rem;
+    transform: scale(0.95,1.05);
+  }
+  69%{
+    transform: scale(1,1);
+  }
+  76%{
+    transform: scale(1,1);
+  }
+  77.5%{
+    top: 46.5rem;
+    right: 6rem;
+    transform: scale(1.05,0.95);
+  }
+  79%{
+    transform: scale(1,1);
+  }
+  100%{
+    top: 53.5rem;
+    right: 8.2rem;
+  }
+}
+
+@keyframes fashion {
+  0% {
+    top: 56rem;
+    left: 3.5rem;
+  }
+  8%{
+    transform: scale(1,1);
+  }
+  10%{
+    top: 61rem;
+    left: 8rem;
+    transform: scale(1.05,0.95);
+  }
+  12%{
+    transform: scale(1,1);
+  }
+  18%{
+    transform: scale(1,1);
+  }
+  20%{
+    top: 56rem;
+    left: 15.4rem;
+    transform: scale(0.95,1.05);
+  }
+  22%{
+    transform: scale(1,1);
+  }
+  53%{
+    transform: scale(1,1);
+  }
+  55%{
+    top: 46rem;
+    left: 7rem;
+    transform: scale(1.05,0.95);
+  }
+  57%{
+    transform: scale(1,1);
+  }
+  83%{
+    transform: scale(1,1);
+  }
+  85%{
+    top: 50rem;
+    left: -1rem;
+    transform: scale(0.95,1.05);
+  }
+  87%{
+    transform: scale(1,1);
+  }
+  100%{
+    top: 56rem;
+    left: 3.5rem;
+  }
+}

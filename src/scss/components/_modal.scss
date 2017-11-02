@@ -1,0 +1,109 @@
+$modal-overlay-bg: rgba(#000, 0.6);
+$modal-bg: transparent;
+
+//$modal-width: 48.75rem;
+$modal-width: 109.09vh;
+$modal-height: auto;
+
+.modal {
+
+  @include absolute(top 50% left 50%);
+  //@include size($modal-width, $modal-height);
+  @include size($modal-width, $modal-height);
+  transform: translate(-50%, -50%);
+  background: $modal-bg;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s, z-index 0.1s 0.3s;
+  
+  @media #{$xs} {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+  
+  &--correct,
+  &--incorrect {
+    img {
+      @include absolute(top 0 left 0);
+      @include size(100%);
+      transform: scale(0);
+      transform-origin: center;
+    }
+  }
+  
+  &--correct {
+    @include size(506px, 535px);
+    @media #{$home-height} {
+      @include size(70.77vh, 74.83vh);
+    }
+  }
+  &--incorrect {
+    @include size(521px, 479px);
+    @media #{$home-height} {
+      @include size(72.87vh, 66.99vh);
+    }
+  }
+  
+  &__wrapper.is-fullscreen & {
+    top: 0;
+  }
+  
+  &.is-opened {
+    z-index: $z-index--modal;
+    opacity: 1;
+    transition: z-index 0.1s, opacity 0.3s 0.1s;
+  }
+  
+  &__wrapper {
+    @include fixed(top 0 left 0);
+    @include size(100%);
+    background: $modal-overlay-bg;
+    z-index: -1 * $z-index--modal;
+    //overflow-y: auto;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, z-index 0.1s 0.3s;
+    
+    .layout--mobile &,
+    .layout--mobile ~ & {
+      overflow-y: auto;
+    }
+    
+    &--trans {
+      background: transparent;
+    }
+    
+    &--dark {
+      background: url('../img/modal-bg.jpg') center no-repeat;
+      background-size: cover;
+      
+      @media #{$xs} {
+        background: none;
+        .modal {
+          background: url('../img/modal-bg_m.jpg') bottom center no-repeat;
+          background-size: cover;
+          padding: 85px 10px 24px;
+        }
+      }
+    }
+    
+    &.is-opened {
+      opacity: 1;
+      z-index: $z-index--modal;
+      transition: z-index 0.1s, opacity 0.3s 0.1s;
+    }
+    
+    &.is-fullscreen {
+      z-index: $z-index--modal + $z-index--header;
+      padding-top: 1rem;
+      overflow-y: auto;
+    }
+  }
+  
+  &__socials {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+  }
+}

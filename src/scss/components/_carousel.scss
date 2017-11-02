@@ -1,0 +1,63 @@
+@import 'owl.carousel/core';
+@import 'owl.carousel/animate';
+//@import 'owl.carousel/autoheight';
+//@import 'owl.carousel/lazyload';
+//@import 'owl.carousel/video';
+
+.owl-nav {
+  @include size(100%, 4.75rem);
+  display: flex;
+  justify-content: space-between;
+  .layout--desktop & {
+    @include absolute(top 50% left 0);
+    margin-top: -2.375rem;
+  }
+  .layout--mobile & {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+.owl-prev,
+.owl-next {
+  @include circle(4.75rem, 50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.2s;
+  border: 2px solid #959595;
+  
+  .layout--mobile & {
+    margin: 0 0.5rem;
+  }
+  
+  &.disabled {
+    opacity: 0.15;
+    cursor: default!important;
+  }
+}
+@each $dir in (prev, next) {
+  .owl-#{$dir} {
+    background-image: url('../img/arrow-#{$dir}.svg');
+  }
+}
+
+.carousel {
+  $nav-color: #605ca8;
+  .layout--desktop &--home {
+    margin-left: -224px;
+    width: calc(100% + 224px);
+    
+    .owl-nav {
+      top: 450px;
+      left: auto;
+      right: 0;
+      width: 13rem;
+      
+      @media #{$home-height} {
+        top: 420px;
+      }
+      @media screen and (min-height: 630px) and (max-height: 700px) {
+        top: 350px;
+      }
+    }
+  }
+}

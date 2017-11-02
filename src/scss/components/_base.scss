@@ -1,0 +1,63 @@
+html, body, div, header, footer, section, article {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+html, body {
+  font: #{$font-size--base} / #{$line-height--base} $font--base;
+  color: $color--base;
+  background: $body-bg;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.layout {
+  width: 100vw;
+  //.no-touch & {
+  //  padding-right: $scroll-width;
+  //}
+  
+}
+
+.page {
+  overflow: hidden;
+  padding: calc((100vh - 700px) / 2) 0;
+  min-height: 100vh;
+  @media #{$home-height} {
+    padding: 0;
+  }
+  @media #{$xs-height} {
+    padding: 0 0 2rem;
+  }
+}
+
+.container {
+  @include center-block;
+  width: 100%;
+  max-width: 1000px;
+  .layout--desktop & {
+    padding: 0 1.25rem;
+    @media #{$home-height} {
+      max-width: 139.86vh;
+    }
+  }
+  .layout--mobile & {
+    padding: 0 10px;
+  }
+}
+
+.hidden {
+  display: none!important;
+}
+.invisible {
+  visibility: hidden;
+}

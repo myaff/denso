@@ -1,0 +1,39 @@
+.btn-menu {
+  @include size(58px, 43px);
+  padding: 10px;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  background: $btn-bg;
+  display: block;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .icon {
+    @include size(100%);
+  }
+  
+  .layout--desktop &__wrapper {
+    @include absolute(top 0 left 0);
+    line-height: 1;
+    @media #{$xl} {
+      left: -32px;
+    }
+    @media #{$xxl} {
+      left: -130px;
+    }
+  }
+  .layout--mobile &__wrapper {
+    @include fixed(top 0 left 0);
+  }
+  .layout--mobile & {
+    @include size(2.5rem);
+    padding: 0.25rem;
+  }
+  
+}
