@@ -166,14 +166,14 @@ function testAnimation (el, isCorrect = true) {
     tl.fromTo(car, 1, {scale: 0}, {scale: 1}, '-=0.5');
     tl.fromTo(funnel, 1, {opacity: 0}, {opacity: 1}, 1.5);
     tl.fromTo(bang, 1.66, {scale: 0}, {scale: 1}, 3.83);
-    tl.fromTo(flaskGreenFull, 1, {opacity: 0}, {opacity: 1}, 1.5);
-    tl.fromTo(flaskBlueFull, 1, {opacity: 0}, {opacity: 1}, 1.5);
-    tl.fromTo(flaskGreenFull, 0.8, {rotation: 0}, {rotation: 125}, 1.75);
-    tl.fromTo(flaskBlueFull, 0.8, {rotation: 0}, {rotation: -125}, 1.75);
-    tl.fromTo(flaskGreenFull, 0.25, {opacity: 1}, {opacity: 0});
-    tl.fromTo(flaskBlueFull, 0.25, {opacity: 1}, {opacity: 0});
-    tl.fromTo(flaskGreenEmpty, 0.25, {opacity: 0}, {opacity: 1}, 3.5);
-    tl.fromTo(flaskBlueEmpty, 0.25, {opacity: 0}, {opacity: 1}, 3.5);
+    tl.fromTo(flaskGreenFull, 0.5, {opacity: 0}, {opacity: 1}, 2.5);
+    tl.fromTo(flaskBlueFull, 0.5, {opacity: 0}, {opacity: 1}, 2.5);
+    tl.fromTo(flaskGreenFull, 0.8, {rotation: 0}, {rotation: 125}, 3);
+    tl.fromTo(flaskBlueFull, 0.8, {rotation: 0}, {rotation: -125}, 3);
+    tl.to(flaskGreenFull, 0.25, {opacity: 0}, 3.8);
+    tl.to(flaskBlueFull, 0.25, {opacity: 0}, 3.8);
+    tl.fromTo(flaskGreenEmpty, 0.25, {opacity: 0}, {opacity: 1}, 3.7);
+    tl.fromTo(flaskBlueEmpty, 0.25, {opacity: 0}, {opacity: 1}, 3.7);
   };
   this[6] = function() {
     let tl = new TimelineMax({
