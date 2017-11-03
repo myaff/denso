@@ -360,31 +360,53 @@
     .water-front {
       @include absolute(top 0 left 0);
       @include size(100%);
-      clip-path: polygon(256/1680*100% 0%, 1486/1680*100% 0%, 1475/1680*100% 393/930*100%, 1652/1680*100% 481/930*100%, 1120/1680*100% 891/930*100%, 336/1680*100% 906/930*100%, 36/1680*100% 544/930*100%, 280/1680*100% 390/930*100%);
+      //clip-path: polygon(256/1680*100% 0%, 1486/1680*100% 0%, 1475/1680*100% 393/930*100%, 1652/1680*100% 481/930*100%, 1120/1680*100% 891/930*100%, 336/1680*100% 906/930*100%, 34/1680*100% 543/930*100%, 280/1680*100% 386/930*100%);
       img {
         @include absolute(top 385/930*100% left 0);
         width: 1680/1680*100%;
         transform-origin: bottom left;
         transform: translate(100px, 500px);
       }
-      .no-clip-path & {
-        @include absolute(bottom 2.8% left 2.2%);
-        @include size(96%, 97.2%);
-        background-position: center bottom;
-        background-repeat: no-repeat;
-        background-size: contain;
-        transform-origin: center;
-        transform: scale(0);
-        img {
-          display: none;
+      .hexagon {
+        &-outer {
+          @include size(100%);
+        }
+        &-1 {
+          @include size(100%, 102.3%);
+          margin-top: 2%;
+          transform: rotate(-37.5deg);
+          overflow: hidden;
+          position: static;
+        }
+        &-2 {
+          @include size(101.5%, 137%);
+          transform: rotate(88deg);
+          overflow: hidden;
+          position: static;
+        }
+        &-3 {
+          @include size(100%, 89%);
+          margin-top: 5.5%;
+          transform: rotate(-82.6deg);
+          overflow: hidden;
+          position: static;
+        }
+        &-4 {
+          @include size(74%, 127%);
+          margin-top: -12%;
+          overflow: hidden;
+          transform: rotate(-32deg);
+          position: static;
+        }
+        &-5 {
+          @include size(130%, 62%);
+          margin-top: 20%;
+          margin-left: 8.9%;
+          transform: rotate(63deg);
+          overflow: hidden;
+          position: static;
         }
       }
-    }
-    .no-clip-path & .water-back {
-      background-image: url('../img/test/2/water-back-ncp.png');
-    }
-    .no-clip-path & .water-front {
-      background-image: url('../img/test/2/water-front-ncp.png');
     }
     .bubbles {
       @include absolute(left 315/1680*100% top 450/930*100%);

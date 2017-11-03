@@ -4,7 +4,6 @@
  */
 
 let endEvent = 'animationend';
-let isClipPathSupport;
 
 function testAnimation (el, isCorrect = true) {
   this[0] = function() {
@@ -49,21 +48,16 @@ function testAnimation (el, isCorrect = true) {
     
     tl.fromTo(bg, 1, {scale: 0}, {scale: 1});
     tl.fromTo(car, 1, {scale: 0}, {scale: 1}, '-=0.5');
-    if (isClipPathSupport) {
-      tl.fromTo(waterBack, 0.9, {x: 100, y: 500, ease: 'easeInOut'}, {x: 0, y: 0}, 1.5);
-      tl.fromTo(waterFront, 0.9, {x: 100, y: 500, ease: 'easeInOut'}, {x: 0, y: 0}, 1.5);
-    } else {
-      tl.fromTo(waterBack, 1, {scale: 0}, {scale: 1});
-      tl.fromTo(waterFront, 1, {scale: 0}, {scale: 1});
-    }
+    tl.fromTo(waterBack, 0.9, {x: 100, y: 500, ease: 'easeInOut'}, {x: 0, y: 0}, 1.5);
+    tl.fromTo(waterFront, 0.9, {x: 100, y: 500, ease: 'easeInOut'}, {x: 0, y: 0}, 1.5);
     tl.fromTo(bubbles, 1, {scale: 0, x: 50, y: 200}, {scale: 1, x: 0, y: 0}, 1.5);
     tl.fromTo(tube, 0.3, {scale: 0}, {scale: 1}, 2.6);
     tl.fromTo(flipperLeft, 0.25, {scale: 0}, {scale: 1}, 2.9);
     tl.fromTo(flipperRight, 0.25, {scale: 0}, {scale: 1}, 3.15);
     tl.fromTo(sparks, 0.2, {opacity: 0}, {opacity: 1}, 4.9);
     tl.fromTo(smoke, 1.66, {scale: 0}, {scale: 1}, 4.9);
-    tlFlippers.fromTo(flipperLeft, 0.2, {skewX: '-5deg', skewY: '-5deg'}, {skewX: '10deg', skewY: '-5deg'});
-    tlFlippers.fromTo(flipperRight, 0.2, {skewX: '-10deg', skewY: '5deg'}, {skewX: '5deg', skewY: '5deg'}, 0.19);
+    tlFlippers.fromTo(flipperLeft, 0.5, {skewX: '-5deg', skewY: '-5deg', rotationX: 0, transformOrigin: "50% 50%"}, {skewX: '10deg', skewY: '-5deg', rotationX: 30, ease: Power1.easeIn}, 'flipper');
+    tlFlippers.fromTo(flipperRight, 0.5, {skewX: '-10deg', skewY: '5deg', rotationX: 0, transformOrigin: "50% 50%"}, {skewX: '5deg', skewY: '5deg', rotationX: 20, ease: Power1.easeOut}, 'flipper');
     tlSparks.fromTo(sparks, 0.05, {x: 0, y: 0}, {x: 20, y: 20}).to(sparks, 0.05, {x: 20, y: 0});
   };
   this[2] = function() {
@@ -231,6 +225,7 @@ function testAnimation (el, isCorrect = true) {
 };
 
 function init () {
+  /*
   $('.test__img').on('click', function(){
     let modal = $(this).closest('.test').find('.test__animation');
     let index = $(this).closest('.test').index();
@@ -245,7 +240,7 @@ function init () {
       Main.Modal.closeModal(modal);
     });
   });
-  isClipPathSupport = Main.DeviceDetection.isClipPathSupport();
+  */
 }
 
 module.exports = {init, testAnimation};

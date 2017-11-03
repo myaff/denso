@@ -17,6 +17,12 @@ $(document).ready(function(){
   //Anchor.init();
   //Input.init();
   //Select.init();
+  
+  $('.water-back, .water-front').each(function(){
+    //let img = $(this).children('img');
+    $(this).wrapInner('<div class="hexagon-outer"><div class="hexagon-1"><div class="hexagon-2"><div class="hexagon-3"><div class="hexagon-4"><div class="hexagon-5"></div></div></div></div></div></div>');
+  });
+  
   Animation.init();
   Test.init();
 });
