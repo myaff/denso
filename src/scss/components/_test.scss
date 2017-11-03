@@ -406,13 +406,13 @@
     .flipper-left {
       width: 217/1680*100%;
       @include absolute(left 360/1680*100% top 565/930*100%);
-      transform-origin: top right;
+      transform-origin: top center;
       transform: scale(0);
     }
     .flipper-right {
       width: 238/1680*100%;
       @include absolute(left 860/1680*100% top 545/930*100%);
-      transform-origin: top left;
+      transform-origin: top center;
       transform: scale(0);
     }
     .smoke {
@@ -469,7 +469,6 @@
     .car {
       width: 820/1680*100%;
       @include absolute(left 160/1680*100% bottom 105/930*100%);
-      //transform-origin: center;
     }
     .tank {
       @include absolute(bottom 105/930*100% right 290/1680*100%);
@@ -507,7 +506,6 @@
     .color-front {
       width: 951/1680*100%;
       @include absolute(left 70/1680*100% bottom 80/930*100%);
-      transform-origin: center;
     }
     .color-back,
     .color-front {
@@ -579,7 +577,6 @@
     .ice {
       width: 760/1680*100%;
       @include absolute(left 330/1680*100% top 270/930*100%);
-      transform-origin: center;
     }
     .ice {
       opacity: 0;

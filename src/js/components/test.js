@@ -14,7 +14,7 @@ let skipAnimation;
 
 function testStart() {
   test.children('.' + activeClass).removeClass(activeClass);
-  let firstTest = test.children('.test').eq(1);
+  let firstTest = test.children('.test').eq(5);
   firstTest.addClass(activeClass);
   test.trigger('loaded');
   firstTest.trigger('active');
