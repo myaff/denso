@@ -18,7 +18,7 @@
     @include absolute(top -10px right 50%);
     @include size(946px, 860px);
     margin-right: 260px;
-    animation: rand 6s infinite both;
+    //animation: rand 6s infinite both;
    @media #{$home-height} {
       @include size(132.31vh, 120.28vh);
       margin-right: 36.36vh;
@@ -27,7 +27,7 @@
   .layout--desktop &--test &__img--rect-red {
     @include absolute(top -100px left 50%);
     @include size(940px, 869px);
-    animation: rand 6s infinite both 2.5s;
+    //animation: rand 6s infinite both 2.5s;
     margin-left: 240px;
     @media #{$home-height} {
       @include size(131.47vh, 121.54vh);

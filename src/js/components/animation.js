@@ -56,8 +56,8 @@ function testAnimation (el, isCorrect = true) {
     tl.fromTo(flipperRight, 0.25, {scale: 0}, {scale: 1}, 3.15);
     tl.fromTo(sparks, 0.2, {opacity: 0}, {opacity: 1}, 4.9);
     tl.fromTo(smoke, 1.66, {scale: 0}, {scale: 1}, 4.9);
-    tlFlippers.fromTo(flipperLeft, 0.5, {skewX: '-5deg', skewY: '-5deg', rotationX: 0, transformOrigin: "50% 50%"}, {skewX: '10deg', skewY: '-5deg', rotationX: 30, ease: Power1.easeIn}, 'flipper');
-    tlFlippers.fromTo(flipperRight, 0.5, {skewX: '-10deg', skewY: '5deg', rotationX: 0, transformOrigin: "50% 50%"}, {skewX: '5deg', skewY: '5deg', rotationX: 20, ease: Power1.easeOut}, 'flipper');
+    tlFlippers.fromTo(flipperLeft, 0.5, {skewX: '-5deg', skewY: '-5deg', rotationX: 0, transformOrigin: "50% 0%"}, {skewX: '10deg', skewY: '-5deg', rotationX: 30, ease: Power1.easeIn}, 'flipper');
+    tlFlippers.fromTo(flipperRight, 0.5,{skewX: '5deg', skewY: '5deg', rotationX: 20, ease: Power1.easeOut},  {skewX: '-10deg', skewY: '5deg', rotationX: 0, transformOrigin: "50% 0%"}, 'flipper');
     tlSparks.fromTo(sparks, 0.05, {x: 0, y: 0}, {x: 20, y: 20}).to(sparks, 0.05, {x: 20, y: 0});
   };
   this[2] = function() {

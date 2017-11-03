@@ -32,7 +32,9 @@ body {
   overflow: hidden;
   padding: calc((100vh - 700px) / 2) 0;
   min-height: 100vh;
-  perspective: 500px;
+  .layout--desktop & {
+    perspective: 500px;
+  }
   @media #{$home-height} {
     padding: 0;
   }
